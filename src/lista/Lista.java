@@ -7,55 +7,12 @@ public class Lista {
     private No inicio, atual, aux;
     private static int contador = 0;
 
+    //verifica se fila ta vazia
     public boolean empty(){
         return inicio == null;
     }
-/*
-    public void enqueue(Carro c,int prioridade){
-        No ref = inicio;
-        if(empty()){
-            inicio = new No(null, c,null);
-            aux = inicio;
-        }else{
-            switch(prioridade){
-                case 1: //Prioridade Alta
-                    inicio = new No(null, c,ref);
-                    ref.setAnt(inicio);
-                    aux = inicio;
-                    c.setPrioridade(1);
-                    break;
 
-                case 2: //Prioridade Média
-                    while(ref != null){
-                        Carro carro = (Carro) ref.getCarro();
-                        aux = inicio;
-                        if(carro.getPrioridade() == 1){
-                            aux = ref;
-                            ref = ref.getProx();
-                        }else{
-                            ref = new No(aux,c,aux.getProx());
-                            aux.setProx(ref);
-                            ref.getProx().setAnt(ref);
-                            aux = ref;
-                            break;
-                        }
-                    }
-                case 3: //Prioridade Baixa
-                    atual = new No(aux, c, null);
-                    aux.setProx(atual);
-                    aux = atual;
-                    break;
-
-                default:
-                    System.out.println("Insira uma prioridade válida!");
-                    break;
-            }
-        }
-        contador++;
-    }
-
- */
-
+    //adiciona um nó na lista
     public void enqueue(Carro c, int prioridade) {
         No ref = inicio;
 
@@ -114,18 +71,20 @@ public class Lista {
         contador++;
     }
 
-
+    // Retorna quantos itens tem na lista
     public int size(){
         return contador;
     }
 
-    public Object front(){
+    // Retorna qual o primeiro objeto da fila
+    public Carro front(){
         if(!empty()){
             return inicio.getCarro();
         }
         return null;
     }
 
+    // Remove o primeiro item da lista
     public boolean dequeue(){
         No ref = inicio;
         if(ref != null){
@@ -138,6 +97,7 @@ public class Lista {
         return false;
     }
 
+    // Exibe todos os itens na lista de prioridade
     public void exibir() {
         No ref = inicio;
         while (ref != null) {

@@ -22,19 +22,16 @@ public class Main {
         lista.enqueue(c5,2);
         lista.enqueue(c6,2);
 
-        // C1,C5,C4,C2,C3
-
         lista.exibir();
 
-
-        /*
+        System.out.println();
         System.out.println(lista.front());
         System.out.println(lista.size());
         System.out.println(lista.dequeue());
         System.out.println(lista.size());
         System.out.println(lista.empty());
 
-         */
+
 
     }
 }

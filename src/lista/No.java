@@ -30,7 +30,7 @@ public class No {
         this.prox = prox;
     }
 
-    public Object getCarro() {
+    public Carro getCarro() {
         return carro;
     }
 
